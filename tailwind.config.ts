@@ -14,6 +14,7 @@ const config: Config = {
       colors: {
         primary: "#031434",
         secondary: "#0A74DC",
+        border: "rgba(164, 167, 183, 0.30)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
