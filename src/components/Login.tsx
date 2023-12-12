@@ -6,9 +6,14 @@ import { AppField } from "@/components/form/AppField";
 import { AppForm } from "@/components/form/AppForm";
 import AppButton from "./form/AppButton";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
-  const handleSubmit = () => {};
+  const router = useRouter();
+
+  const handleSubmit = () => {
+    router.push("/overview");
+  };
 
   const validationSchema = {};
   return (
@@ -29,9 +34,9 @@ const Login = () => {
           >
             <AppField name="email" label="email address" />
             <AppField name="password" label="password" />
-            <AppButton label="Log in" />
+            <AppButton label="Log in" type={"submit"} />
             <Link
-              href={""}
+              href={"/overview"}
               className="text-center text-secondary text-sm font-normal"
             >
               Forgot your password?

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { inter } from "@/libs/fonts";
+
 import "./globals.css";
+import CustomLayout from "@/components/CustomLayout";
 
 export const metadata: Metadata = {
   title: "StarWars",
@@ -12,9 +13,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" className={`${inter.variable}`}>
-      <body className={"font-inter"}>{children}</body>
-    </html>
-  );
+  return <CustomLayout>{children}</CustomLayout>;
 }

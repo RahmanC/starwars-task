@@ -12,3 +12,9 @@ interface AppFormProps {
   children: React.ReactNode;
   className?: string;
 }
+
+interface SideMenuProps {
+  icon: string;
+  label: string;
+  customClass?: string;
+}
