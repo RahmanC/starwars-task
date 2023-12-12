@@ -4,7 +4,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
-const SideMenu = ({ icon, label, customClass }: SideMenuProps) => {
+const SideMenu = ({ icon, label }: SideMenuProps) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -13,9 +13,9 @@ const SideMenu = ({ icon, label, customClass }: SideMenuProps) => {
   return (
     <div
       onClick={() => router.push(`/${label}`)}
-      className={`flex items-center justify-start py-2 px-6 rounded cursor-pointer hover:bg-secondary mb-2 ${
-        label === "overview" ? "gap-4" : "gap-6"
-      } ${isActive && "bg-secondary"} ${customClass}`}
+      className={`flex items-center justify-start py-2 px-6 rounded cursor-pointer hover:bg-secondary ${
+        label === "overview" ? "gap-4 mb-14" : "gap-6 mb-3"
+      } ${isActive && "bg-secondary"}`}
     >
       <Image
         src={icon}

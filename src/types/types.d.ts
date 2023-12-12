@@ -16,5 +16,11 @@ interface AppFormProps {
 interface SideMenuProps {
   icon: string;
   label: string;
-  customClass?: string;
+}
+
+interface CardProps {
+  label: string;
+  value: string;
+  icon: string;
+  data: string;
 }

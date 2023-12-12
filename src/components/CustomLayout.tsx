@@ -21,7 +21,7 @@ const CustomLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
             <div className="w-4/5 flex flex-col">
               <Navbar />
-              <div className="flex flex-1">{children}</div>
+              <div className="w-full flex flex-1 p-10">{children}</div>
             </div>
           </div>
         ) : (

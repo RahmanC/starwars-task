@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <header className="shadow-sm bg-white flex justify-between items-center pt-6 pb-2 px-8">
+    <header className="shadow-[0px_2px_6px_0px_rgba(229,229,229,0.30)] bg-white flex justify-between items-center pt-6 pb-2 px-8">
       <div className="flex items-center gap-4 cursor-pointer">
         <Image src="/back.svg" alt="notification" width={9} height={15} />
         <p className="text-[#A4A7B7] text-base font-normal">Back</p>

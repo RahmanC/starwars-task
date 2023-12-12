@@ -20,7 +20,6 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        shadow: "0px 2px 6px 0px rgba(229, 229, 229, 0.30)",
       },
     },
   },
