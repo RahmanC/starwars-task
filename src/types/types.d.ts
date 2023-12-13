@@ -24,3 +24,10 @@ interface CardProps {
   icon: string;
   data: string;
 }
+
+interface TableProps {
+  tableHeader: string;
+  rowData: ReactNode[];
+  columnData: any[];
+  loading?: boolean;
+}

@@ -1,5 +1,7 @@
 import Card from "@/components/Card";
-import { cards } from "@/libs/mock";
+import Table from "@/components/table/Table";
+import { Overview_Column } from "@/components/table/TableColumn";
+import { cards, overview } from "@/libs/mock";
 import React from "react";
 
 const Overview = () => {
@@ -10,6 +12,12 @@ const Overview = () => {
           return <Card key={index} {...card} />;
         })}
       </div>
+
+      <Table
+        tableHeader="films"
+        columnData={Overview_Column}
+        rowData={overview}
+      />
     </div>
   );
 };

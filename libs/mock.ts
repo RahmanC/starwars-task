@@ -24,3 +24,30 @@ export const cards = [
     data: "20 More than than yesterday",
   },
 ];
+
+export const overview = [
+  {
+    title: "MoonLight",
+    date: "9/18/20",
+    director: "Esther Howard",
+    producer: "Paracetamol",
+    episode_id: "4",
+    character: "https://swapi.dev/api/people",
+  },
+  {
+    title: "MoonLight",
+    date: "9/18/20",
+    director: "Esther Howard",
+    producer: "Paracetamol",
+    episode_id: "4",
+    character: "https://swapi.dev/api/people",
+  },
+  {
+    title: "MoonLight",
+    date: "9/18/20",
+    director: "Esther Howard",
+    producer: "Paracetamol",
+    episode_id: "4",
+    character: "https://swapi.dev/api/people",
+  },
+];
