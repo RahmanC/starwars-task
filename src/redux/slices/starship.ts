@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getStarships } from "@/api/services";
+import { getStarshipById, getStarships } from "@/api/services";
 
 const initialState = {
   starships: [] as any[],
+  starship: {},
   isLoading: false,
   error: false,
 };
@@ -17,6 +18,9 @@ const slice = createSlice({
     },
     updateStarships(state, action) {
       state.starships = action.payload.starships;
+    },
+    updateStarship(state, action) {
+      state.starship = action.payload.starship;
     },
   },
 });
@@ -37,6 +41,32 @@ export function FetchStarships() {
     dispatch(
       slice.actions.updateStarships({
         starships: response?.results,
+      })
+    );
+
+    dispatch(
+      slice.actions.updateIsLoading({
+        isLoading: false,
+        error: false,
+      })
+    );
+  };
+}
+
+// fetch single starship
+export function FetchStarshipById(id: number) {
+  return async (dispatch: any) => {
+    dispatch(
+      slice.actions.updateIsLoading({
+        isLoading: true,
+        error: false,
+      })
+    );
+
+    const response = await getStarshipById(id);
+    dispatch(
+      slice.actions.updateStarship({
+        starship: response,
       })
     );
 

@@ -15,7 +15,7 @@ const Details = ({
 }: DetailsProps) => {
   return (
     <div className="flex gap-7">
-      <Image src={src} alt={name} width={318} height={450} />
+      <Image src={src} alt={name} width={318} height={450} priority />
       <div className="mt-12 text-[#303B54] text-base font-[500]">
         <p className="text-5xl font-bold text-black mb-7">{name}</p>
         <p>

@@ -14,10 +14,10 @@ const SinglePeople = () => {
 
   const { name, height, gender, birth_year, skin_color } = singlePeople;
 
-  const filmId = parseInt(id, 10);
+  const peopleId = parseInt(id, 10);
 
   useEffect(() => {
-    dispatch(FetchPeopleById(filmId));
+    dispatch(FetchPeopleById(peopleId));
   }, []);
 
   return isLoading ? (

@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getSpecies } from "@/api/services";
+import { getSpecieById, getSpecies } from "@/api/services";
 
 const initialState = {
   species: [] as any[],
+  specie: {},
   isLoading: false,
   error: false,
 };
@@ -17,6 +18,9 @@ const slice = createSlice({
     },
     updateSpecies(state, action) {
       state.species = action.payload.species;
+    },
+    updateSpecie(state, action) {
+      state.specie = action.payload.specie;
     },
   },
 });
@@ -37,6 +41,32 @@ export function FetchSpecies() {
     dispatch(
       slice.actions.updateSpecies({
         species: response?.results,
+      })
+    );
+
+    dispatch(
+      slice.actions.updateIsLoading({
+        isLoading: false,
+        error: false,
+      })
+    );
+  };
+}
+
+// fetch single specie
+export function FetchSpecieById(id: number) {
+  return async (dispatch: any) => {
+    dispatch(
+      slice.actions.updateIsLoading({
+        isLoading: true,
+        error: false,
+      })
+    );
+
+    const response = await getSpecieById(id);
+    dispatch(
+      slice.actions.updateSpecie({
+        specie: response,
       })
     );
 
