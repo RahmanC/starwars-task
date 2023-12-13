@@ -1,8 +1,12 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import React, { ReactNode, useState } from "react";
 
 const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const rows: any[] = [];
 
   const [selectAll, setSelectAll] = useState(false);
@@ -29,6 +33,10 @@ const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
       updatedSelectedRows.splice(index, 1);
       setSelectedRows(updatedSelectedRows);
     }
+  };
+
+  const handleClick = (id: number) => {
+    router.push(`${pathname}/${id}`);
   };
 
   return (
@@ -84,8 +92,8 @@ const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
                       />
                     </form>
                   </td>
-                  {rows.map((r, index) => (
-                    <td key={index} onClick={() => handleRow(row)}>
+                  {rows.map((r, idx) => (
+                    <td key={idx} onClick={() => handleClick(index + 1)}>
                       {row[r]}
                     </td>
                   ))}

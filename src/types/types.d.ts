@@ -31,3 +31,20 @@ interface TableProps {
   columnData: any[];
   loading?: boolean;
 }
+
+interface DetailsProps {
+  src: string;
+  name: string;
+  label1: string;
+  label2: string;
+  label3: string;
+  label4?: string;
+  value1: string;
+  value2: string;
+  value3: string;
+  value4?: string;
+}
+
+interface Params {
+  id: string;
+}
