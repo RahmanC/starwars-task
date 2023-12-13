@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Preview Live](https://starwars-enyata.vercel.app)
+# Login with any email and password(combination of letters and numbers and minimum length of 6 characters)
 
 ## Getting Started
 
