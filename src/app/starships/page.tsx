@@ -1,15 +1,9 @@
 "use client";
 
-import Card from "@/components/Card";
 import Table from "@/components/table/Table";
-import {
-  Overview_Column,
-  Starship_Column,
-} from "@/components/table/TableColumn";
-import { cards, overview } from "@/libs/mock";
-import { FetchFilms } from "@/redux/slices/film";
+import { Starship_Column } from "@/components/table/TableColumn";
 import { FetchStarships } from "@/redux/slices/starship";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Starship = () => {

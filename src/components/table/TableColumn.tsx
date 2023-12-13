@@ -47,3 +47,57 @@ export const Starship_Column = [
     accessor: "character",
   },
 ];
+
+export const People_Column = [
+  {
+    header: "Name",
+    accessor: "name",
+  },
+  {
+    header: "Birth Year",
+    accessor: "birth_year",
+  },
+  {
+    header: "Gender",
+    accessor: "gender",
+  },
+  {
+    header: "Hair Color",
+    accessor: "hair_color",
+  },
+  {
+    header: "Height",
+    accessor: "height",
+  },
+  {
+    header: "Created",
+    accessor: "created",
+  },
+];
+
+export const Specie_Column = [
+  {
+    header: "Name",
+    accessor: "name",
+  },
+  {
+    header: "Classification",
+    accessor: "classification",
+  },
+  {
+    header: "Eye Colors",
+    accessor: "eye_colors",
+  },
+  {
+    header: "Hair Color",
+    accessor: "hair_colors",
+  },
+  {
+    header: "Height",
+    accessor: "average_height",
+  },
+  {
+    header: "Created",
+    accessor: "created",
+  },
+];

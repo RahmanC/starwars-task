@@ -32,7 +32,7 @@ const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
   };
 
   return (
-    <div className="w-full mt-16">
+    <div className="w-full mt-16 pb-8">
       <p className="capitalize text-[#A4A7B7] text-base font-normal">
         {tableHeader}
       </p>

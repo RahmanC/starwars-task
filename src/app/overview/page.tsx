@@ -3,9 +3,9 @@
 import Card from "@/components/Card";
 import Table from "@/components/table/Table";
 import { Overview_Column } from "@/components/table/TableColumn";
-import { cards, overview } from "@/libs/mock";
+import { cards } from "@/libs/mock";
 import { FetchFilms } from "@/redux/slices/film";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Overview = () => {
