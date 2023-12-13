@@ -10,10 +10,16 @@ export const AppField: FC<AppFieldProps> = ({ name, label, ...rest }) => {
 
   return (
     <div>
-      <div className="relative w-[100%] p-[1rem] border border-secondary rounded-[4px] ">
+      <div
+        className={`relative w-[100%] p-[1rem] border border-secondary rounded-[4px] ${
+          touched[name] && errors[name] && "border-red-400"
+        }`}
+      >
         <label
           htmlFor={name}
-          className="absolute top-[-15%] left-[5%] bg-white px-1 text-xs font-[500] text-[#B0B9C8] capitalize"
+          className={`absolute top-[-15%] left-[5%] bg-white px-1 text-xs font-[500] text-[#B0B9C8] capitalize ${
+            touched[name] && errors[name] && "text-red-400"
+          }`}
         >
           {label}
         </label>

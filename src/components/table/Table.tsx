@@ -76,7 +76,7 @@ const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
               </td>
             </tr>
           ) : (
-            rowData.map((row, index) => {
+            rowData?.map((row, index) => {
               const isSelected = selectedRows.includes(row);
               return (
                 <tr

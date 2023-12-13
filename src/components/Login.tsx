@@ -7,18 +7,23 @@ import { AppForm } from "@/components/form/AppForm";
 import AppButton from "./form/AppButton";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { loginSchema } from "@/libs/schema";
+import { useDispatch, useSelector } from "react-redux";
+import { LoginUser } from "@/redux/slices/auth";
 
 const Login = () => {
   const router = useRouter();
+  const dispatch: any = useDispatch();
+  const { isLoading } = useSelector((state: any) => state.auth);
 
-  const handleSubmit = () => {
-    router.push("/overview");
+  const handleSubmit = (values: { email: string; password: string }) => {
+    const username = values.email.split("@")[0];
+    dispatch(LoginUser(username, router.push("/overview")));
   };
 
-  const validationSchema = {};
   return (
     <div className="flex h-screen">
-      <div className="w-1/3 bg-primary flex items-center justify-center">
+      <div className="hidden w-1/3 bg-primary md:flex items-center justify-center">
         <Image
           src="/logo.svg"
           alt="starwars"
@@ -27,22 +32,22 @@ const Login = () => {
           priority
         />
       </div>
-      <div className="w-2/3 flex items-center justify-center">
-        <div className="border border-border rounded-[8px] px-16 py-8 w-[467px]">
+      <div className="w-full md:w-2/3 p-4 md:p-0 flex items-center justify-center">
+        <div className="border border-border rounded-[8px] px-5 md:px-16 py-8 w-full md:w-[467px]">
           <p className="text-2xl text-[#434854] font-semibold mb-2">Login</p>
           <p className="text-base font-[400] mb-16">
             Kindly enter your details to log in{" "}
           </p>
           <AppForm
-            initialValues={{ username: "", password: "" }}
+            initialValues={{ email: "", password: "" }}
             onSubmit={handleSubmit}
-            validationSchema={validationSchema}
+            validationSchema={loginSchema}
           >
             <AppField name="email" label="email address" />
-            <AppField name="password" label="password" />
-            <AppButton label="Log in" type={"submit"} />
+            <AppField name="password" label="password" type="password" />
+            <AppButton label="Log in" type={"submit"} loading={isLoading} />
             <Link
-              href={"/overview"}
+              href={""}
               className="text-center text-secondary text-sm font-normal"
             >
               Forgot your password?

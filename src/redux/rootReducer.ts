@@ -6,6 +6,7 @@ import starshipsReducer from "./slices/starship";
 import peopleReducer from "./slices/people";
 import speciesReducer from "./slices/species";
 import utilReducer from "./slices/util";
+import authReducer from "./slices/auth";
 
 const rootPersistConfig: PersistConfig<any> = {
   key: "root",
@@ -19,6 +20,7 @@ const rootReducer: Reducer = combineReducers({
   people: peopleReducer,
   species: speciesReducer,
   util: utilReducer,
+  auth: authReducer,
 });
 
 export { rootPersistConfig, rootReducer };

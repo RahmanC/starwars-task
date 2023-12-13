@@ -1,12 +1,6 @@
 import React from "react";
 
-interface Props {
-  label: string;
-  onClick?: () => void;
-  style?: any;
-  type?: any;
-}
-const AppButton = ({ label, type, onClick }: Props) => {
+const AppButton = ({ label, type, onClick, loading }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -15,7 +9,7 @@ const AppButton = ({ label, type, onClick }: Props) => {
         "bg-secondary rounded-[6px] p-3 w-[100%] text-white font-[500] text-[1rem]"
       }
     >
-      {label}
+      {loading ? "please wait..." : label}
     </button>
   );
 };

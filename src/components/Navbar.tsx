@@ -1,19 +1,29 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
-import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { IoMdMenu, IoMdClose, IoMdLogOut } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { Logout } from "@/redux/slices/auth";
 
 const Navbar = ({ sidenav, setSideNav }: NavProps) => {
   const router = useRouter();
+  const dispatch: any = useDispatch();
   const { id } = useParams();
+  const { username } = useSelector((state: any) => state.auth);
+
+  const [visible, setVisible] = useState(false);
 
   const handleBack = () => {
     router.back();
   };
+  const handleLogout = () => {
+    dispatch(Logout(router.push("/")));
+  };
+
   return (
-    <header className="fixed w-full md:w-4/5 shadow-[0px_2px_6px_0px_rgba(229,229,229,0.30)] bg-white flex justify-between items-center pt-6 pb-2 px-8">
+    <header className="fixed w-full md:w-4/5 shadow-[0px_2px_6px_0px_rgba(229,229,229,0.30)] bg-white flex justify-between items-center pt-6 pb-2 px-3 md:px-8">
       <div>
         <div className="md:hidden">
           <button
@@ -33,12 +43,23 @@ const Navbar = ({ sidenav, setSideNav }: NavProps) => {
           </div>
         )}
       </div>
-      <div className="flex items-center gap-4 md:gap-6">
+      <div className="flex items-center gap-4 md:gap-6 relative">
         <Image src="/bell.svg" alt="notification" width={24} height={24} />
         <Image src="/pipe.svg" alt="notification" width={1} height={24} />
         <Image src="/avatar.svg" alt="notification" width={30} height={30} />
-        <p>John Doe</p>
-        <Image src="/more.svg" alt="notification" width={17} height={3} />
+        <p>{username}</p>
+        <div onClick={() => setVisible(!visible)}>
+          <Image src="/more.svg" alt="notification" width={17} height={3} />
+        </div>
+        {visible && (
+          <div
+            className="absolute top-8 right-1 cursor-pointer flex items-center gap-6 justify-center bg-slate-200 bg-opacity-[60%] p-3 shadow-[0px_2px_6px_0px_rgba(229,229,229,0.30)] rounded-lg"
+            onClick={handleLogout}
+          >
+            <IoMdLogOut />
+            <p className="text-sm">Logout</p>
+          </div>
+        )}
       </div>
     </header>
   );

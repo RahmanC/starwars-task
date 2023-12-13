@@ -5,6 +5,14 @@ interface AppFieldProps {
   placeholder?: string;
 }
 
+interface ButtonProps {
+  label: string;
+  onClick?: () => void;
+  style?: any;
+  type?: any;
+  loading?: boolean;
+}
+
 interface AppFormProps {
   initialValues: any;
   onSubmit: (values: any) => void;
