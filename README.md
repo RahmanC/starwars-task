@@ -1,5 +1,5 @@
 # [Preview Live](https://starwars-enyata.vercel.app)
-# Login with any email and password(combination of letters and numbers and minimum length of 6 characters)
+# Login with any email and password
 
 ## Getting Started
 
