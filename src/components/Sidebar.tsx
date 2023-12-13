@@ -6,7 +6,7 @@ import Link from "next/link";
 const Sidebar = () => {
   return (
     <div className="bg-primary w-full h-full flex flex-col py-8 px-4">
-      <Link href="/" className="flex self-center mb-8">
+      <Link href="/overview" className="flex self-center mb-8">
         <Image
           src="/logo.svg"
           width={107}

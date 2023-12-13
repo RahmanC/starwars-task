@@ -46,9 +46,12 @@ const Navbar = ({ sidenav, setSideNav }: NavProps) => {
       <div className="flex items-center gap-4 md:gap-6 relative">
         <Image src="/bell.svg" alt="notification" width={24} height={24} />
         <Image src="/pipe.svg" alt="notification" width={1} height={24} />
-        <Image src="/avatar.svg" alt="notification" width={30} height={30} />
-        <p>{username}</p>
-        <div onClick={() => setVisible(!visible)} className="cursor-pointer">
+        <div
+          onClick={() => setVisible(!visible)}
+          className="flex items-center gap-4 md:gap-6 cursor-pointer"
+        >
+          <Image src="/avatar.svg" alt="notification" width={30} height={30} />
+          <p className="text-sm md:text-base">{username}</p>
           <Image src="/more.svg" alt="notification" width={17} height={3} />
         </div>
         {visible && (

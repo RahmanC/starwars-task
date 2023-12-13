@@ -53,11 +53,11 @@ export function LoginUser(username: string, action: any) {
 //logout
 export function Logout(action: any) {
   return async (dispatch: any) => {
+    action;
     dispatch(
       slice.actions.updateUser({
         username: "",
       })
     );
-    action;
   };
 }

@@ -70,7 +70,11 @@ const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
               </th>
               {columnData.map((column, index) => {
                 rows.push(column.accessor);
-                return <th key={index}>{column?.header}</th>;
+                return (
+                  <th key={index} className="text-xs md:text-base">
+                    {column?.header}
+                  </th>
+                );
               })}
             </tr>
           </thead>
@@ -107,7 +111,11 @@ const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
                         </form>
                       </td>
                       {rows.map((r, idx) => (
-                        <td key={idx} onClick={() => handleClick(index + 1)}>
+                        <td
+                          key={idx}
+                          onClick={() => handleClick(index + 1)}
+                          className="text-sm md:text-base"
+                        >
                           {r === "created"
                             ? new Date(row[r]).toLocaleDateString("en-US", {
                                 month: "numeric",
@@ -125,10 +133,10 @@ const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
             )}
           </tbody>
         </table>
-        {rowData?.length > itemsPerPage && (
-          <Pagination pageCount={pageCount} onPageChange={changePage} />
-        )}
       </div>
+      {rowData?.length > itemsPerPage && (
+        <Pagination pageCount={pageCount} onPageChange={changePage} />
+      )}
     </div>
   );
 };
