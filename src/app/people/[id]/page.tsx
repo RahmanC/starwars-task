@@ -5,18 +5,19 @@ import Details from "@/components/Details";
 import { useParams } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchFilmById } from "@/redux/slices/film";
+import { FetchPeopleById } from "@/redux/slices/people";
 
 const SinglePeople = () => {
   const { id }: any = useParams();
   const dispatch: any = useDispatch();
-  const { film, isLoading } = useSelector((state: any) => state.film);
+  const { singlePeople, isLoading } = useSelector((state: any) => state.people);
 
-  const { title, director, producer, release_date } = film;
+  const { name, height, gender, birth_year, skin_color } = singlePeople;
 
   const filmId = parseInt(id, 10);
 
   useEffect(() => {
-    dispatch(FetchFilmById(filmId));
+    dispatch(FetchPeopleById(filmId));
   }, []);
 
   return isLoading ? (
@@ -25,13 +26,15 @@ const SinglePeople = () => {
     <div>
       <Details
         src="/p.svg"
-        name={title}
-        label1="Director"
-        label2="Producer"
-        label3="Release Date"
-        value1={director}
-        value2={producer}
-        value3={release_date}
+        name={name}
+        label1="Gender"
+        label2="Year of Birth"
+        label3="Skin Color"
+        label4="Height"
+        value1={gender}
+        value2={birth_year}
+        value3={skin_color}
+        value4={height}
       />
     </div>
   );

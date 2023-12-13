@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getPeople } from "@/api/services";
+import { getPeople, getPeopleById } from "@/api/services";
 
 const initialState = {
   people: [] as any[],
+  singlePeople: {},
   isLoading: false,
   error: false,
 };
@@ -17,6 +18,9 @@ const slice = createSlice({
     },
     updatePeople(state, action) {
       state.people = action.payload.people;
+    },
+    updateSinglePeople(state, action) {
+      state.singlePeople = action.payload.singlePeople;
     },
   },
 });
@@ -37,6 +41,32 @@ export function FetchPeople() {
     dispatch(
       slice.actions.updatePeople({
         people: response?.results,
+      })
+    );
+
+    dispatch(
+      slice.actions.updateIsLoading({
+        isLoading: false,
+        error: false,
+      })
+    );
+  };
+}
+
+// fetch single people
+export function FetchPeopleById(id: number) {
+  return async (dispatch: any) => {
+    dispatch(
+      slice.actions.updateIsLoading({
+        isLoading: true,
+        error: false,
+      })
+    );
+
+    const response = await getPeopleById(id);
+    dispatch(
+      slice.actions.updateSinglePeople({
+        singlePeople: response,
       })
     );
 
