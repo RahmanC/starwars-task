@@ -27,7 +27,7 @@ const Overview = () => {
         loading={isLoading}
         tableHeader="films"
         columnData={Overview_Column}
-        rowData={overview}
+        rowData={films}
       />
     </div>
   );
