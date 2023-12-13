@@ -48,3 +48,8 @@ interface DetailsProps {
 interface Params {
   id: string;
 }
+
+interface NavProps {
+  sidenav: boolean;
+  setSideNav: () => void;
+}

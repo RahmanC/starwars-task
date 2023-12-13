@@ -3,10 +3,8 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { inter } from "@/libs/fonts";
-import Image from "next/image";
-import Sidebar from "./Sidebar";
-import Navbar from "./Navbar";
 import { Provider } from "@/app/provider";
+import DashboardLayout from "./DashboardLayout";
 
 const CustomLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -17,17 +15,7 @@ const CustomLayout = ({ children }: { children: React.ReactNode }) => {
       <body className={"font-inter"}>
         <Provider>
           {notLogin ? (
-            <div className="flex h-screen">
-              <div className=" w-1/5 ">
-                <Sidebar />
-              </div>
-              <div className="w-4/5 flex flex-col max-h-screen">
-                <Navbar />
-                <div className="w-full flex flex-1 p-10 overflow-y-scroll mt-9">
-                  {children}
-                </div>
-              </div>
-            </div>
+            <DashboardLayout>{children}</DashboardLayout>
           ) : (
             <>{children}</>
           )}

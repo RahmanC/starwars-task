@@ -17,7 +17,7 @@ const Overview = () => {
   }, []);
   return (
     <div className="w-full">
-      <div className="grid grid-cols-4 gap-14 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-14 w-full mt-10 md:mt-0">
         {cards.map((card, index) => {
           return <Card key={index} {...card} />;
         })}

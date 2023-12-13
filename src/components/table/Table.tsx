@@ -40,11 +40,11 @@ const Table = ({ tableHeader, columnData, rowData, loading }: TableProps) => {
   };
 
   return (
-    <div className="w-full mt-16 pb-8">
+    <div className="max-w-full overflow-x-hidden mt-16 pb-8">
       <p className="capitalize text-[#A4A7B7] text-base font-normal">
         {tableHeader}
       </p>
-      <table className="my-8 border border-border rounded w-full bg-[rgba(242,242,246,0.4)]">
+      <table className="my-8 border border-border rounded w-full overflow-x-scroll bg-[rgba(242,242,246,0.4)]">
         <thead>
           <tr>
             <th>

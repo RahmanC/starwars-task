@@ -5,6 +5,7 @@ import filmReducer from "./slices/film";
 import starshipsReducer from "./slices/starship";
 import peopleReducer from "./slices/people";
 import speciesReducer from "./slices/species";
+import utilReducer from "./slices/util";
 
 const rootPersistConfig: PersistConfig<any> = {
   key: "root",
@@ -17,6 +18,7 @@ const rootReducer: Reducer = combineReducers({
   starships: starshipsReducer,
   people: peopleReducer,
   species: speciesReducer,
+  util: utilReducer,
 });
 
 export { rootPersistConfig, rootReducer };
