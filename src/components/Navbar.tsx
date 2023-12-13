@@ -24,18 +24,18 @@ const Navbar = ({ sidenav, setSideNav }: NavProps) => {
 
   return (
     <header className="fixed w-full md:w-4/5 shadow-[0px_2px_6px_0px_rgba(229,229,229,0.30)] bg-white flex justify-between items-center pt-6 pb-2 px-3 md:px-8">
-      <div>
+      <div className="flex items-center">
         <div className="md:hidden">
-          <button
-            className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+          <div
+            className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border cursor-pointer"
             onClick={setSideNav}
           >
             {sidenav ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
-          </button>
+          </div>
         </div>
         {id && (
           <div
-            className="flex items-center gap-4 cursor-pointer"
+            className="flex items-center gap-2 md:gap-4 cursor-pointer"
             onClick={handleBack}
           >
             <Image src="/back.svg" alt="notification" width={9} height={15} />
@@ -48,12 +48,12 @@ const Navbar = ({ sidenav, setSideNav }: NavProps) => {
         <Image src="/pipe.svg" alt="notification" width={1} height={24} />
         <Image src="/avatar.svg" alt="notification" width={30} height={30} />
         <p>{username}</p>
-        <div onClick={() => setVisible(!visible)}>
+        <div onClick={() => setVisible(!visible)} className="cursor-pointer">
           <Image src="/more.svg" alt="notification" width={17} height={3} />
         </div>
         {visible && (
           <div
-            className="absolute top-8 right-1 cursor-pointer flex items-center gap-6 justify-center bg-slate-200 bg-opacity-[60%] p-3 shadow-[0px_2px_6px_0px_rgba(229,229,229,0.30)] rounded-lg"
+            className="absolute top-8 right-1 cursor-pointer flex items-center gap-6 justify-center bg-slate-200  p-3 shadow-[0px_2px_6px_0px_rgba(229,229,229,0.30)] rounded-lg"
             onClick={handleLogout}
           >
             <IoMdLogOut />

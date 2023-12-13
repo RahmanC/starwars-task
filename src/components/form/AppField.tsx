@@ -11,8 +11,8 @@ export const AppField: FC<AppFieldProps> = ({ name, label, ...rest }) => {
   return (
     <div>
       <div
-        className={`relative w-[100%] p-[1rem] border border-secondary rounded-[4px] ${
-          touched[name] && errors[name] && "border-red-400"
+        className={`relative w-[100%] p-[1rem] border  rounded-[4px] ${
+          touched[name] && errors[name] ? "border-red-400" : "border-secondary"
         }`}
       >
         <label

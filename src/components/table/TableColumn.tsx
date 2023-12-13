@@ -17,7 +17,7 @@ export const Overview_Column = [
   },
   {
     header: "Character",
-    accessor: "character",
+    accessor: "characters",
   },
 ];
 
@@ -44,7 +44,7 @@ export const Starship_Column = [
   },
   {
     header: "Character",
-    accessor: "character",
+    accessor: "pilots",
   },
 ];
 

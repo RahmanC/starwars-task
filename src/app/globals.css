@@ -36,3 +36,39 @@ th {
   text-align: left;
   color: #a4a7b7;
 }
+
+.paginationBtn {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  color: #031434;
+  margin-right: 0.5rem;
+}
+
+.paginationBtn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  color: #303b54;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 3px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.paginationActive {
+  color: #031434;
+}
+.paginationActive a {
+  color: white;
+  background-color: #031434;
+}
+
+.paginationDisabled {
+  display: none;
+}

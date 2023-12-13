@@ -61,3 +61,8 @@ interface NavProps {
   sidenav: boolean;
   setSideNav: () => void;
 }
+
+interface PaginationProps {
+  pageCount: number;
+  onPageChange: (selectedItem: { selected: number }) => void;
+}
