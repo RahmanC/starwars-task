@@ -19,7 +19,13 @@ const Login = () => {
   return (
     <div className="flex h-screen">
       <div className="w-1/3 bg-primary flex items-center justify-center">
-        <Image src="/logo.svg" alt="starwars" width={385} height={167} />
+        <Image
+          src="/logo.svg"
+          alt="starwars"
+          width={385}
+          height={167}
+          priority
+        />
       </div>
       <div className="w-2/3 flex items-center justify-center">
         <div className="border border-border rounded-[8px] px-16 py-8 w-[467px]">
