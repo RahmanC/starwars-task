@@ -12,8 +12,8 @@ const SideMenu = ({ icon, label }: SideMenuProps) => {
   const dispatch: any = useDispatch();
 
   const handleMenu = () => {
-    dispatch(ToggleMenu());
     router.push(`/${label}`);
+    dispatch(ToggleMenu());
   };
 
   const isActive = pathname.split("/")[1] === label;

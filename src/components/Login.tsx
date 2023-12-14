@@ -54,11 +54,11 @@ const Login = () => {
             </Link>
           </AppForm>
           <p className="text-[#B0B9C8] text-xs font-normal text-center mt-24">
-            <span className="border-b border-[#303B54] text-[#303B54]">
+            <span className="border-b border-[#303B54] text-[#303B54] cursor-pointer">
               Privacy Policy
             </span>{" "}
             and{" "}
-            <span className="border-b border-[#303B54] text-[#303B54]">
+            <span className="border-b border-[#303B54] text-[#303B54] cursor-pointer">
               Terms of services
             </span>
           </p>
